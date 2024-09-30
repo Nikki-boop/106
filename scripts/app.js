@@ -1,23 +1,26 @@
 
-function Hello(){
-console.log("hello there!");
+function saveTask(){
+    //get values
+    const title = $("#txtTitle").val();
+    const desc = $("#txtDescription").val();
+    const color = $("#selColor").val();
+    const date = $("#selDate").val();
+    const status = $("#selStatus").val();
+    const budget = $("#numBudget").val();
+    console.log(title, desc, color, date, status, budget);
+    //build an object
+
+    let taskToSave = new Task(title, desc, color, date, status, budget);
+    console.log(taskToSave);
+
+    //save to server (post)
+
+    //display the task (get)
 }
-
-let global = 0;
-
 
 function init(){
-    Hello();
-    let temp = 1;
-    global = temp;
-    console.log("hello");
-}
-
-//variable scope
-let i = 0;
-
-for(let i = 0; i < 10; i++){
-    //empty variable
+    console.log("init");
+    $("#btnSave").click(saveTask)
 }
 
 
